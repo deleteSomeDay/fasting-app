@@ -5,8 +5,8 @@ const React = require('react')
 class TimerInput extends React.Component {
   render() {
     return (
-      <div style={{ fontSize: '20px'}}>
-        <h3 style={{ fontSize: '20px'}}>Input your desired time</h3>
+      <div style={{ fontSize:'1em'}}>
+        <h3 style={{ fontSize: '1em'}}>Input your desired time</h3>
         <input type="number" value={this.props.value} onChange={this.props.handleChange} required />
       </div>
     );
@@ -17,7 +17,7 @@ class Time extends React.Component {
   render() {
     return (
       <div>
-        <h1 style={{ fontSize: 100, marginLeft: 100 }}>{this.props.hours}:{this.props.value}:{this.props.seconds}</h1>
+        <h1 style={{ fontSize: 100}}>{this.props.hours}:{this.props.value}:{this.props.seconds}</h1>
       </div>
     );
   }
@@ -178,8 +178,8 @@ class Timer extends React.Component {
           <Card.Title style={{ fontSize: '80px' }}>Intermittent Fasting Timer</Card.Title>
           <p class="text-info" style={{ fontSize: '20px' }}>Pick a fasting time below and watch the clock count down the time until your next meal.</p>
           <Time hours={this.state.hours} value={this.state.value} seconds={this.state.seconds} />
-          <button className="btn btn-lg btn-primary" style={{ marginLeft: '25px' }} onClick={this.reset}>Reset</button>
-          <button className="btn btn-lg btn-danger" style={{ marginLeft: '75px' }} onClick={this.stop}>Stop</button>
+          <button className="btn btn-lg btn-primary" style={{ marginLeft: '5vw' }} onClick={this.reset}>Reset</button>
+          <button className="btn btn-lg btn-danger" style={{ marginLeft: '10vw' }} onClick={this.stop}>Stop</button>
           <ProgressBar animated variant="success" style={{ marginTop: '7vh' }} now={this.secondsRemaining / (this.state.start * 60 * 60) * 100} />
         </Card.Body>
       </Card>
@@ -191,9 +191,9 @@ class Timer extends React.Component {
           <Card.Title style={{ fontSize: '80px' }}>Intermittent Fasting Timer</Card.Title>
           <p class="text-info" style={{ fontSize: '20px' }}>Pick a fasting time below and watch the clock count down the time until your next meal.</p>
           <Time hours={this.state.hours} value={this.state.value} seconds={this.state.seconds} />
-          <button className="btn btn-lg btn-primary" onClick={this.sixteenEight}>16:8</button>
-          <button className="btn btn-lg btn-primary" style={{ marginLeft: '25px' }} onClick={this.eighteenSix}>18:6</button>
-          <button className="btn btn-lg btn-primary" style={{ marginLeft: '25px' }} onClick={this.customTime}>Custom</button>
+          <button className="btn btn-lg btn-primary" onClick={this.sixteenEight}>16 Hours</button>
+          <button className="btn btn-lg btn-primary" style={{ marginLeft: '1vw' }} onClick={this.eighteenSix}>18 Hours</button>
+          <button className="btn btn-lg btn-primary" style={{ marginLeft: '1vw' }} onClick={this.customTime}>Custom</button>
           <StartButton startCountDown={this.startCountDown} value={this.state.value} />
           {this.state.isCustom ? <TimerInput value={this.state.hours} handleChange={this.handleChange}/> : null}
         </Card.Body>

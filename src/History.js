@@ -13,7 +13,7 @@ const History = (props) => {
               return (
 
                 (fast.expTime - fast.actualTime === 0) ? (
-                  <Card bg="light" text="dark" style={{ marginTop: '2vh', width: '15rem', height: '18vh' }}>
+                  <Card bg="light" text="dark" style={{ position: 'relative', marginTop: '2vh', width: '15rem', height: '18vh' }}>
                     <Card.Header className="text-light bg-success" style={{ fontSize: '17px' }}> {fast.date}</Card.Header>
                     <Card.Body>
                       <Card.Title style={{ fontSize: '20px' }}> {fast.time} </Card.Title>
