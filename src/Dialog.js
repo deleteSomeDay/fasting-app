@@ -7,9 +7,8 @@ import Typography from '@material-ui/core/Typography';
 class TimerInput extends React.Component {
     render() {
       return (
-        <div style={{ fontSize:'1em'}}>
-          <h3 style={{ fontSize: '1em'}}>Input your desired time</h3>
-          <input type="number" value={this.props.value} onChange={this.props.handleChange} required />
+        <div style={{marginLeft: '25%', width: '50%', marginBottom:'5vh', marginTop: '5vh'}}>
+          <input style={{ width: '100%'}} type="number" value={this.props.value} onChange={this.props.handleChange} required />
         </div>
       );
     }
@@ -23,9 +22,9 @@ class TimerInput extends React.Component {
   
 
   return (
-    <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={true}>
-      <DialogTitle id="simple-dialog-title">How many hours do you want to fast?</DialogTitle>
-      <TimerInput styles={{marginLeft: '30vw'}} value={props.hours} handleChange={props.handleChange}/>
+    <Dialog onClose={handleClose} fullWidth='true' aria-labelledby="simple-dialog-title" open={true}>
+      <DialogTitle style={{textAlign: 'center'}} id="simple-dialog-title">How many hours do you want to fast?</DialogTitle>
+      <TimerInput value={props.hours} handleChange={props.handleChange}/>
     </Dialog>
   );
 }
