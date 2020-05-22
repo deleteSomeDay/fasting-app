@@ -3,16 +3,6 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import SimpleDialog from './Dialog'
 
 const React = require('react')
-class TimerInput extends React.Component {
-  render() {
-    return (
-      <div style={{ fontSize:'1em'}}>
-        <h3 style={{ fontSize: '1em'}}>Input your desired time</h3>
-        <input type="number" value={this.props.value} onChange={this.props.handleChange} required />
-      </div>
-    );
-  }
-}
 
 class Time extends React.Component {
   render() {
