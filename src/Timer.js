@@ -148,12 +148,19 @@ class Timer extends React.Component {
   }
 
   reset(){
+    var h
+    if(this.state.hours === this.state.start){
+      h = this.state.hours - 1;
+    }
+    else{
+      h = this.state.hours;
+    }
+    var cross = {expTime: h, actualTime: this.state.start, date: new Date(Date.now()).toDateString()};
     this.setState({
         hours: this.state.start,
         value: '00',
         seconds: '00',
       })
-      var cross = {expTime: this.state.hours, actualTime: this.state.start, date: new Date(Date.now()).toDateString()};
       this.props.handleHistory(cross)
       this.secondsRemaining = this.state.start * 60 * 60;
     clearInterval(this.intervalHandle);
