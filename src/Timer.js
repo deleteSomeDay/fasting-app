@@ -1,5 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import SimpleDialog from './Dialog'
 
 const React = require('react')
 class TimerInput extends React.Component {
@@ -169,6 +170,18 @@ class Timer extends React.Component {
     this.intervalHandle = setInterval(this.tick, 1000);
   }
 
+  setHours = (hours) => {
+    this.setState({
+      hours: hours
+    });
+  }
+
+  onClose = (hours) => {
+    this.setState({
+      isCustom: false 
+    });
+  }
+
   render() {
     const clicked = this.state.isClicked;
     if (clicked) {
@@ -195,7 +208,7 @@ class Timer extends React.Component {
           <button className="btn btn-lg btn-primary" style={{ marginLeft: '1vw' }} onClick={this.eighteenSix}>18 Hours</button>
           <button className="btn btn-lg btn-primary" style={{ marginLeft: '1vw' }} onClick={this.customTime}>Custom</button>
           <StartButton startCountDown={this.startCountDown} value={this.state.value} />
-          {this.state.isCustom ? <TimerInput value={this.state.hours} handleChange={this.handleChange}/> : null}
+          {this.state.isCustom ?  <SimpleDialog onClose={this.onClose} setHours={this.setHours} handleChange={this.handleChange} /> : null}
         </Card.Body>
       </Card>
 
@@ -204,7 +217,7 @@ class Timer extends React.Component {
     }
   }
 }
-
+// <TimerInput value={this.state.hours} handleChange={this.handleChange}/>
 
 
 
