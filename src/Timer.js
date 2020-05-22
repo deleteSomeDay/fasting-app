@@ -1,5 +1,3 @@
-
-// <button onClick={this.startTimer}>start</button>
 import Card from 'react-bootstrap/Card';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 
@@ -7,8 +5,8 @@ const React = require('react')
 class TimerInput extends React.Component {
   render() {
     return (
-      <div style={{ marginLeft: 100 }}>
-        <h3>Input your desired time</h3>
+      <div style={{ fontSize: '20px'}}>
+        <h3 style={{ fontSize: '20px'}}>Input your desired time</h3>
         <input type="number" value={this.props.value} onChange={this.props.handleChange} required />
       </div>
     );
@@ -197,8 +195,7 @@ class Timer extends React.Component {
           <button className="btn btn-lg btn-primary" style={{ marginLeft: '25px' }} onClick={this.eighteenSix}>18:6</button>
           <button className="btn btn-lg btn-primary" style={{ marginLeft: '25px' }} onClick={this.customTime}>Custom</button>
           <StartButton startCountDown={this.startCountDown} value={this.state.value} />
-          {this.state.isCustom ? <TimerInput value={this.state.hours} handleChange={this.handleChange} /> : null}
-          <ProgressBar striped variant="success" style={{ marginTop: '7vh' }} now={this.secondsRemaining / (this.state.start * 60 * 60) * 100} />
+          {this.state.isCustom ? <TimerInput value={this.state.hours} handleChange={this.handleChange}/> : null}
         </Card.Body>
       </Card>
 
